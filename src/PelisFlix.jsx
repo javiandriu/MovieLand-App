@@ -6,7 +6,6 @@ const PelisFlix = () => {
   return (
     <>
       <Navbar/>
-      <SearchBar/>
     </>
   )
 }
