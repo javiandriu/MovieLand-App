@@ -1,11 +1,13 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import SearchBar from './components/SearchBar'
+import MainPage from './pages/MainPage'
+
 
 const PelisFlix = () => {
   return (
     <>
       <Navbar/>
+      <MainPage/>
     </>
   )
 }

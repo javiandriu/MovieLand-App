@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
+import search from "../helpers/api"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -48,14 +51,28 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const SearchBar = () => {
     const [inputValue, setInputValue] = useState()
+    const [searchResult, setSearchResult] = useState([])
+    //const [anchorEl, setAnchorEl] = useState(null);
 
     const handleInputChange = ({target}) => {
-        console.log(target.value)
+      if(!target.value) {
+        setSearchResult([])
+        return
+      }  
+      const result = search(target.value)
+
+      setSearchResult(result.results)
+      //setAnchorEl(target);
+      console.log(result.results)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+
+    // const handleClose = () => {
+    //   setAnchorEl(null);
+    // };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -70,6 +87,29 @@ const SearchBar = () => {
               value={inputValue}
             />
           </Search>
+
+          {/* <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={searchResult.length > 0}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          > */}
+            
+          {/* {searchResult.map(item => {
+            return (
+              <MenuItem 
+                key={item.id} 
+                onClick={handleClose}
+              >
+                {item.title}
+              </MenuItem>
+            )
+          })
+          } 
+          </Menu> */}
     </form>
   )
 }
