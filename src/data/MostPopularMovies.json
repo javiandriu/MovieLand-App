@@ -1,0 +1,52 @@
+{
+    "items": [
+        {
+            "id": "tt1745960",
+            "rank": "1",
+            "rankUpDown": "+4",
+            "title": "Top Gun: Maverick",
+            "fullTitle": "Top Gun: Maverick (2022)",
+            "year": "2022",
+            "image": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX128_CR0,3,128,176_AL_.jpg",
+            "crew": "Joseph Kosinski (dir.), Tom Cruise, Jennifer Connelly",
+            "imDbRating": "8.5",
+            "imDbRatingCount": "336848"
+        },
+        {
+            "id": "tt10954984",
+            "rank": "2",
+            "rankUpDown": "+2",
+            "title": "Nope",
+            "fullTitle": "Nope (2022)",
+            "year": "2022",
+            "image": "https://m.media-amazon.com/images/M/MV5BNGM1MDc3ZjgtODlkOS00NmZjLWJlOTItNGQ5OGFhN2JlNjgxXkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_UY176_CR6,0,128,176_AL_.jpg",
+            "crew": "Jordan Peele (dir.), Daniel Kaluuya, Keke Palmer",
+            "imDbRating": "7.0",
+            "imDbRatingCount": "92915"
+        },
+        {
+            "id": "tt12593682",
+            "rank": "3",
+            "rankUpDown": "0",
+            "title": "Bullet Train",
+            "fullTitle": "Bullet Train (2022)",
+            "year": "2022",
+            "image": "https://m.media-amazon.com/images/M/MV5BMDU2ZmM2OTYtNzIxYy00NjM5LTliNGQtN2JmOWQzYTBmZWUzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,3,128,176_AL_.jpg",
+            "crew": "David Leitch (dir.), Brad Pitt, Joey King",
+            "imDbRating": "7.5",
+            "imDbRatingCount": "69782"
+        },
+        {
+            "id": "tt11866324",
+            "rank": "4",
+            "rankUpDown": "-2",
+            "title": "Prey",
+            "fullTitle": "Prey (2022)",
+            "year": "2022",
+            "image": "https://m.media-amazon.com/images/M/MV5BMDBlMDYxMDktOTUxMS00MjcxLWE2YjQtNjNhMjNmN2Y3ZDA1XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_UX128_CR0,3,128,176_AL_.jpg",
+            "crew": "Dan Trachtenberg (dir.), Amber Midthunder, Dakota Beavers",
+            "imDbRating": "7.2",
+            "imDbRatingCount": "142820"
+        }
+    ]
+}

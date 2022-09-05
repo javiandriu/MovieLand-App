@@ -1,22 +1,19 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Carousel from '../components/Carousel';
 import Top10PopularMovies from '../components/Top10PopularMovie';
-import MovieItems from '../components/MovieItems';
-import SeriesItems from '../components/SeriesItems';
-
-
+import Top10TvShows from '../components/Top10TvShows';
+import WatchOnlineMovies from '../components/WatchOnlineMovies';
+import WatchOnlineTvShows from '../components/WatchOnlineTvShows';
 
 const MainPage = () =>  {
   return (
     <Box sx={{ width: '100%' }}>
-      <Stack spacing={2}>
         <Carousel/>
         <Top10PopularMovies/>
-        <MovieItems/>
-        <SeriesItems/> 
-      </Stack>
+        <Top10TvShows/>
+        <WatchOnlineMovies/>
+        <WatchOnlineTvShows/> 
     </Box>
   );
 }

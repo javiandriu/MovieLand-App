@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 // import Menu from '@mui/material/Menu';
 // import MenuItem from '@mui/material/MenuItem';
-import search from "../helpers/api"
+import {searchMovie} from "../helpers/searchMovie"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,11 +59,12 @@ const SearchBar = () => {
         setSearchResult([])
         return
       }  
-      const result = search(target.value)
-
-      setSearchResult(result.results)
-      //setAnchorEl(target);
-      console.log(result.results)
+      const promise = searchMovie(target.value)
+      promise.then((results)=>{
+        setSearchResult(results.results)
+        console.log(results.results)
+      })
+      
     }
 
     const handleSubmit = (e) => {
