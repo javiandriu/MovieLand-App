@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link, useNavigate} from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,17 +14,25 @@ import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import SearchBar from './SearchBar';
 
 
-const pages = ['INICIO', 'PELÍCULAS', 'SERIES', 'GÉNEROS', 'DC', 'MARVEL'];
+const pages = ['HOME', 'MOVIES', 'TvSHOWS', 'CATEGORIES'];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handlePageClick = (page) => {
     setAnchorElNav(null);
+    if (page === "HOME") {
+      navigate("/" , { replace: true })
+    }else if (page === "MOVIES") {
+      navigate("/movies" , { replace: true })
+    }else {
+      navigate("/tvshows" , { replace: true })
+    }
   };
 
   
@@ -35,8 +44,8 @@ const Navbar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -74,13 +83,13 @@ const Navbar = () => {
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              onClose={handlePageClick}
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={()=>handlePageClick(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -90,8 +99,8 @@ const Navbar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -109,7 +118,7 @@ const Navbar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handlePageClick(page)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}

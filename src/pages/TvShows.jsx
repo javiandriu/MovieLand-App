@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SeriesPage = () => {
+const TvShowsPage = () => {
   return (
     <>
         <p>Series Online</p>
@@ -9,4 +9,4 @@ const SeriesPage = () => {
   )
 }
 
-export default SeriesPage
+export default TvShowsPage

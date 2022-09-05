@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DcPage = () => {
+const MoviesPage = () => {
   return (
     <div>DcPage</div>
   )
 }
 
-export default DcPage
+export default MoviesPage

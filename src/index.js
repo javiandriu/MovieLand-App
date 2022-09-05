@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
+import MovieLandRouter from './router/MovieLandRouter'
 
-import PelisFlix from './PelisFlix';
+import Navbar from './components/Navbar'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <PelisFlix />,
+    <BrowserRouter>
+        <Navbar/>
+        <MovieLandRouter/>  
+    </BrowserRouter>
 );
 
 

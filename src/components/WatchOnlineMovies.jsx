@@ -6,10 +6,12 @@ import { searchMostPopularMovie } from '../helpers/searchMovie'
 const WatchOnlineMovies = () => {
     const [movies, setMovies] = useState([])
 
+
     useEffect(() => {
       const promise = searchMostPopularMovie()
       promise.then(results => {
          setMovies(results.items)
+         
       })
   
     },[])

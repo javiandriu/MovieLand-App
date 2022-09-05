@@ -1,9 +1,10 @@
 import React from 'react'
+
 import Navbar from './components/Navbar'
 import MainPage from './pages/MainPage'
 
 
-const PelisFlix = () => {
+const MovieLand = () => {
   return (
     <>
       <Navbar/>
@@ -12,4 +13,4 @@ const PelisFlix = () => {
   )
 }
 
-export default PelisFlix
+export default MovieLand

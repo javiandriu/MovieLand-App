@@ -20,7 +20,7 @@ export const searchComingSoonMovie = (text) => {
      
  }
 
- export const searchMovieDetail = (text) => {
+ export const searchMovieDetail = (id) => {
     return Promise.resolve(MovieDetail)
  }
 
