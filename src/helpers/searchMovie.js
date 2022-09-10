@@ -1,5 +1,4 @@
 import SearchResult from "../data/MovieData.json"
-import ComingSoon from "../data/ComingSoon.json"
 import MostPopularMovie from "../data/MostPopularMovies.json"
 import MostPopularTvShow from "../data/MostPopularTvShow.json"
 import Top10PopularMovies from "../data/Top10PopularMovies.json"
@@ -11,10 +10,6 @@ export const searchMovie = (text) => {
     
 }
 
-export const searchComingSoonMovie = (text) => {
-    return Promise.resolve(ComingSoon)
-     
- }
  export const searchMostPopularMovie = (text) => {
     return Promise.resolve(MostPopularMovie)
      

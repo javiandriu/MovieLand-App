@@ -9,7 +9,7 @@ const ItemsContainer = ({results}) => {
             results.map(item => {
               return (
                 <Grid item xs={6} md={1.5}>
-                  <Link to={`/${item.id}`}><img src={item.image} key={item.id} width="100%" height={200} alt={item.description}/></Link>
+                  <Link to={`movies/${item.id}`}><img src={item.image} key={item.id} width="100%" height={200} alt={item.description}/></Link>
                   
                 </Grid>
               )

@@ -10,7 +10,7 @@ const MovieLandRouter = () => {
                 <Route path="/" element={<MainPage/>} />
                 <Route path="/movies" element={<MoviesPage/>} />
                 <Route path="/tvshows" element={<TvShowsPage/>} />
-                <Route path="/:id" element={<MovieDetails />} />
+                <Route path="movies/:id" element={<MovieDetails />} />
             </Routes>
     )
 }

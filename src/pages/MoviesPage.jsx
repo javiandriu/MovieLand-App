@@ -1,8 +1,9 @@
 import React from 'react'
+import MovieDetails from '../components/MovieDetails'
 
 const MoviesPage = () => {
   return (
-    <div>DcPage</div>
+    <MovieDetails/>
   )
 }
 
