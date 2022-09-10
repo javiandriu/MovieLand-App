@@ -1,14 +1,14 @@
 import {useEffect, useState}from 'react'
 import ItemsContainer from './ItemsContainer'
-import { searchMostPopularTvShow } from '../helpers/searchMovie'
+import { MostPopularTvShowCollection } from '../helpers/api'
 
 const WatchOnlineTvShows = () => {
   const [tvShows, setTvShows] = useState([])
 
   useEffect(() => {
-    const promise = searchMostPopularTvShow()
+    const promise = MostPopularTvShowCollection()
     promise.then(results => {
-      setTvShows(results.items)
+      setTvShows(results)
     })
 
   },[])

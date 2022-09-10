@@ -1,14 +1,14 @@
 import {useEffect,useState} from 'react'
 import ItemsContainer from './ItemsContainer'
-import { searchTop10PopularMovies } from '../helpers/searchMovie'
+import { Top10PopularMoviesCollection } from '../helpers/api'
 
 const Top10PopularMovies = () => {
   const [popularMovies, setPopularMovies] = useState([])
 
   useEffect(() => {
-    const promise = searchTop10PopularMovies()
+    const promise = Top10PopularMoviesCollection()
     promise.then(results => {
-      setPopularMovies(results.items)
+      setPopularMovies(results)
     })
 
   },[])

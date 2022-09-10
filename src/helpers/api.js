@@ -1,4 +1,4 @@
-const APIKEY = process.env.APIKEY
+const APIKEY = process.env.REACT_APP_APIKEY
 
 export const searchMovie = async (title) => {
     const data = await fetch(`https://imdb-api.com/en/API/Search/${APIKEY}/${title}`)
@@ -8,36 +8,35 @@ export const searchMovie = async (title) => {
  }
  
  
-  export const searchMostPopularMovie = async (title) => {
-    const data = await fetch(`https://imdb-api.com/en/API/MostPopularMovies/${APIKEY}/${title}`)
-    const {results} = await data.json()
-    return results
+  export const MostPopularMovieCollection = async () => {
+    const data = await fetch(`https://imdb-api.com/en/API/MostPopularMovies/${APIKEY}`)
+    const {items} = await data.json()
+    return items.slice(0, 20)
       
   }
  
-  export const searchMostPopularTvShow = async (title) => {
-    const data = await fetch(`https://imdb-api.com/en/API/MostPopularTVs/${APIKEY}/${title}`)
-    const {results} = await data.json()
-    return results
+  export const MostPopularTvShowCollection = async () => {
+    const data = await fetch(`https://imdb-api.com/en/API/MostPopularTVs/${APIKEY}`)
+    const {items} = await data.json()
+    return items.slice(0, 20)
   }
 
 
   export const searchMovieDetail = async(id) => {
-    const data = await fetch(`https://imdb-api.com/en/API/Title/${APIKEY}//${id}`)
-    const {results} = await data.json()
-    return results
+    const data = await fetch(`https://imdb-api.com/en/API/Title/${APIKEY}/${id}`)
+    return data.json()
   }
  
   
  
-  export const searchTop10PopularMovies = async (title) => {
-    const data = await fetch(`https://imdb-api.com/en/API/Top250Movies/${APIKEY}/${title}`)
-    const {results} = await data.json()
-    return results
+  export const Top10PopularMoviesCollection = async () => {
+    const data = await fetch(`https://imdb-api.com/en/API/Top250Movies/${APIKEY}`)
+    const {items} = await data.json()
+    return items.slice(0, 10)
  }
  
- export const searchTop10TvShows = async(title) => {
-    const data = await fetch(`https://imdb-api.com/en/API/Top250TVs/${APIKEY}/${title}`)
-    const {results} = await data.json()
-    return results
+ export const Top10TvShowsCollection = async() => {
+    const data = await fetch(`https://imdb-api.com/en/API/Top250TVs/${APIKEY}`)
+    const {items} = await data.json()
+    return items.slice(0, 10)
  }

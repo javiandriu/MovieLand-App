@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import ItemsContainer from './ItemsContainer'
-import { searchMostPopularMovie } from '../helpers/searchMovie'
+import { MostPopularMovieCollection } from '../helpers/api'
 
 
 const WatchOnlineMovies = () => {
@@ -8,9 +8,10 @@ const WatchOnlineMovies = () => {
 
 
     useEffect(() => {
-      const promise = searchMostPopularMovie()
+      const promise = MostPopularMovieCollection()
       promise.then(results => {
-         setMovies(results.items)
+        console.log(results)
+         setMovies(results)
          
       })
   
