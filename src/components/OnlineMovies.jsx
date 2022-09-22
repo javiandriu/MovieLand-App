@@ -1,14 +1,14 @@
 import { useState,useEffect } from 'react'
 import ItemsContainer from './ItemsContainer'
-import { WatchOnlineMovie } from '../helpers/api'
+import {MoviesCollectionPage} from '../helpers/api'
 
 
-const WatchOnlineMovies = () => {
+const OnlineMovies = () => {
     const [movies, setMovies] = useState([])
 
 
     useEffect(() => {
-      const promise = WatchOnlineMovie()
+      const promise = MoviesCollectionPage()
       promise.then(results => {
         console.log(results)
          setMovies(results)
@@ -20,7 +20,7 @@ const WatchOnlineMovies = () => {
 
   return (
     <>
-    <h1>Watch Online Movies</h1>
+    <h1>Online Movies</h1>
     <ItemsContainer results={movies}/>
     
 
@@ -28,4 +28,4 @@ const WatchOnlineMovies = () => {
   )
 }
 
-export default WatchOnlineMovies
+export default OnlineMovies

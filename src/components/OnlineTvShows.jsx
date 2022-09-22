@@ -1,12 +1,13 @@
-import {useEffect, useState}from 'react'
+import { useState,useEffect } from 'react'
 import ItemsContainer from './ItemsContainer'
-import { WatchOnlineTvShow } from '../helpers/api'
+import { TvShowsCollectionPage } from '../helpers/api'
 
-const WatchOnlineTvShows = () => {
+
+const OnlineTvShows = () => {
   const [tvShows, setTvShows] = useState([])
 
   useEffect(() => {
-    const promise = WatchOnlineTvShow()
+    const promise = TvShowsCollectionPage()
     promise.then(results => {
       setTvShows(results)
     })
@@ -15,11 +16,11 @@ const WatchOnlineTvShows = () => {
 
   return (
     <>
-        <h1>Watch Online Series</h1>
+        <h1>Online TV Shows</h1>
         <ItemsContainer results={tvShows}/>
     </>
     
   )
 }
 
-export default WatchOnlineTvShows
+export default OnlineTvShows

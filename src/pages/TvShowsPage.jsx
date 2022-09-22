@@ -1,9 +1,13 @@
 import React from 'react'
+import OnlineTvShows from '../components/OnlineTvShows'
 
-const MarvelPage = () => {
+const TvShowsPage = () => {
   return (
-    <div>MarvelPage</div>
+    <>
+        <OnlineTvShows/>
+    </>
+    
   )
 }
 
-export default MarvelPage
+export default TvShowsPage

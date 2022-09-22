@@ -14,7 +14,7 @@ import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import SearchBar from './SearchBar';
 
 
-const pages = ['HOME', 'MOVIES', 'TvSHOWS', 'CATEGORIES'];
+const pages = ['HOME', 'MOVIES', 'TV SHOWS', 'COMING SOON'];
 
 const Navbar = () => {
   const navigate = useNavigate();

@@ -1,9 +1,12 @@
 import React from 'react'
-import MovieDetails from '../components/MovieDetails'
+import OnlineMovies from '../components/OnlineMovies'
+
 
 const MoviesPage = () => {
   return (
-    <MovieDetails/>
+    <>
+      <OnlineMovies/>
+    </>
   )
 }
 

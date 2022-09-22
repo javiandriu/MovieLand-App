@@ -6,37 +6,37 @@ export const searchMovie = async (title) => {
     return results
      
  }
+
+ export const searchMovieDetail = async(id) => {
+  const data = await fetch(`https://imdb-api.com/en/API/Title/${APIKEY}/${id}`)
+  return data.json()
+}
  
- 
-  export const MostPopularMovieCollection = async () => {
+export const WatchInTheaters= async () => {
+  const data = await fetch(`https://imdb-api.com/en/API/InTheaters/${APIKEY}`)
+  const {items} = await data.json()
+  return items.slice(0, 16)
+}
+
+
+export const WatchOnlineMovie = async () => {
+  const data = await fetch(`https://imdb-api.com/en/API/MostPopularMovies/${APIKEY}`)
+  const {items} = await data.json()
+  return items.slice(0, 16) 
+}
+export const WatchOnlineTvShow = async () => {
+  const data = await fetch(`https://imdb-api.com/en/API/MostPopularTVs/${APIKEY}`)
+  const {items} = await data.json()
+  return items.slice(0, 16)
+}
+
+  export const MoviesCollectionPage = async () => {
     const data = await fetch(`https://imdb-api.com/en/API/MostPopularMovies/${APIKEY}`)
     const {items} = await data.json()
-    return items.slice(0, 20)
-      
+    return items.slice(0, 30) 
   }
- 
-  export const MostPopularTvShowCollection = async () => {
+  export const TvShowsCollectionPage = async () => {
     const data = await fetch(`https://imdb-api.com/en/API/MostPopularTVs/${APIKEY}`)
     const {items} = await data.json()
-    return items.slice(0, 20)
+    return items.slice(0, 50)
   }
-
-
-  export const searchMovieDetail = async(id) => {
-    const data = await fetch(`https://imdb-api.com/en/API/Title/${APIKEY}/${id}`)
-    return data.json()
-  }
- 
-  
- 
-  export const Top10PopularMoviesCollection = async () => {
-    const data = await fetch(`https://imdb-api.com/en/API/Top250Movies/${APIKEY}`)
-    const {items} = await data.json()
-    return items.slice(0, 10)
- }
- 
- export const Top10TvShowsCollection = async() => {
-    const data = await fetch(`https://imdb-api.com/en/API/Top250TVs/${APIKEY}`)
-    const {items} = await data.json()
-    return items.slice(0, 10)
- }

@@ -1,8 +1,6 @@
 import SearchResult from "../data/MovieData.json"
 import MostPopularMovie from "../data/MostPopularMovies.json"
 import MostPopularTvShow from "../data/MostPopularTvShow.json"
-import Top10PopularMovies from "../data/Top10PopularMovies.json"
-import Top10TvShows from "../data/TOP10TvShows.json"
 import MovieDetail from "../data/MovieDetail.json"
 
 export const searchMovie = (text) => {
@@ -10,7 +8,7 @@ export const searchMovie = (text) => {
     
 }
 
- export const searchMostPopularMovie = (text) => {
+ export const WatchOnlineMovie = (text) => {
     return Promise.resolve(MostPopularMovie)
      
  }
@@ -19,14 +17,7 @@ export const searchMovie = (text) => {
     return Promise.resolve(MovieDetail)
  }
 
- export const searchMostPopularTvShow = (text) => {
+ export const WatchOnlineTvShow = (text) => {
     return Promise.resolve(MostPopularTvShow)
  }
 
- export const searchTop10PopularMovies = (text) => {
-   return Promise.resolve(Top10PopularMovies)
-}
-
-export const searchTop10TvShows = (text) => {
-   return Promise.resolve(Top10TvShows)
-}
