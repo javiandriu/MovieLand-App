@@ -11,15 +11,9 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import MovieCreationTwoToneIcon from '@mui/icons-material/MovieCreationTwoTone';
 
-const data = [
-  { icon: <MovieCreationTwoToneIcon />, label: 'Comedy' },
-  { icon: <MovieCreationTwoToneIcon />, label: 'Crime' },
-  { icon: <MovieCreationTwoToneIcon />, label: 'Documentary' },
-  { icon: <MovieCreationTwoToneIcon />, label: 'Mistery' },
-  { icon: <MovieCreationTwoToneIcon />, label: 'Thriller' },
-];
 
-const categoriesMovie = ["Action", "Animation", "Adventure", "Comedy", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction"]
+
+const categoriesMovie = ["Action", "Animation", "Adventure", "Comedy", "Crime", "Documentary", "Mistery", "Musical","Romance", "Sci-fi", "Thriller"]
 
 const FireNav = styled(List)({
   '& .MuiListItemButton-root': {
@@ -36,7 +30,9 @@ const FireNav = styled(List)({
 });
 
 const  Category = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  
+
   return (
     <Box sx={{ display: 'flex' }}>
       <ThemeProvider
@@ -57,7 +53,7 @@ const  Category = () => {
       >
         <Paper elevation={0} sx={{ maxWidth: 200 }}>
           <FireNav component="nav" disablePadding>
-            <ListItemButton component="a" href="#customized-list">
+            <ListItemButton  component="a" href="#customized-list">
               <ListItemText
                 sx={{ my: 0 }}
                 primary="Categories"
@@ -70,22 +66,25 @@ const  Category = () => {
             </ListItemButton>
             <Divider />
                 {
-                   categoriesMovie.map(category => (
-                      <ListItem component="div" disablePadding>
-                        <ListItemButton sx={{ height: 56 }}>
-                          <ListItemIcon>
-                            <MovieCreationTwoToneIcon color="primary" />
-                          </ListItemIcon>
-                          <ListItemText
-                            primary= "movie"
-                            primaryTypographyProps={{
-                              color: 'primary',
-                              fontWeight: 'medium',
-                              variant: 'body2',
-                            }}
-                          />
-                        </ListItemButton>
-                    </ListItem>
+                   categoriesMovie.slice(0,3).map(category => (
+                        <ListItem key={category} component="div" disablePadding>
+                          <ListItemButton component="a" href={`/movies/genres/${category.toLowerCase()}`} sx={{ height: 56 }}>
+                              <ListItemIcon>
+                                <MovieCreationTwoToneIcon color="primary" />
+                              </ListItemIcon>
+                              <ListItemText
+                                primary= {
+                                          `${category}`
+                                          }
+                                primaryTypographyProps={{
+                                        color: 'primary',
+                                        fontWeight: 'medium',
+                                        variant: 'body2',
+                                  }}
+                              />
+                              
+                            </ListItemButton>  
+                      </ListItem>
                    ))
                 }
             <Divider />
@@ -98,6 +97,7 @@ const  Category = () => {
               <ListItemButton
                 alignItems="flex-start"
                 onClick={() => setOpen(!open)}
+                
                 sx={{
                   px: 3,
                   pt: 2.5,
@@ -132,16 +132,17 @@ const  Category = () => {
                 />
               </ListItemButton>
               {open &&
-                data.map((item) => (
+                categoriesMovie.slice(4).map((item) => (
                   <ListItemButton
-                    key={item.label}
+                    component="a" href={`/movies/genres/${item.toLowerCase()}`} 
+                    key={item}
                     sx={{ py: 0, minHeight: 32, color: 'rgba(255,255,255,.8)' }}
                   >
                     <ListItemIcon sx={{ color: 'inherit' }}>
-                      {item.icon}
+                      <MovieCreationTwoToneIcon />
                     </ListItemIcon>
                     <ListItemText
-                      primary={item.label}
+                      primary={item}
                       primaryTypographyProps={{ fontSize: 14, fontWeight: 'medium' }}
                     />
                   </ListItemButton>

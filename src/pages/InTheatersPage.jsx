@@ -2,9 +2,11 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Buttons from '../components/Buttons'
 import Category from '../components/Category';
-import OnlineTvShows from '../components/OnlineTvShows'
+import OnlineIntheaters from '../components/OnlineInTheaters';
 
-const TvShowsPage = () => {
+
+
+const InTheatersPage = () => {
   return (
     <Box 
       sx={{ 
@@ -17,14 +19,13 @@ const TvShowsPage = () => {
         <Grid item xs={10}>
             <Box sx={{ 
               width: '100%'}}>
-              <OnlineTvShows/>
+              <OnlineIntheaters/>
               <Buttons/>
           </Box>
         </Grid>
       </Grid>
     </Box>
-    
   )
 }
 
-export default TvShowsPage
+export default InTheatersPage

@@ -14,7 +14,7 @@ import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import SearchBar from './SearchBar';
 
 
-const pages = ['HOME', 'MOVIES', 'TV SHOWS', 'COMING SOON'];
+const pages = ['HOME', 'MOVIES', 'TV SHOWS', 'IN THEATERS'];
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -30,8 +30,10 @@ const Navbar = () => {
       navigate("/" , { replace: true })
     }else if (page === "MOVIES") {
       navigate("/movies" , { replace: true })
-    }else {
+    }else if (page === "TV SHOWS") {
       navigate("/tvshows" , { replace: true })
+    }else {
+      navigate("/intheaters" , { replace: true })
     }
   };
 

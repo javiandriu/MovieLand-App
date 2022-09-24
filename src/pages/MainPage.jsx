@@ -3,8 +3,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import WatchOnlineMovies from '../components/WatchOnlineMovies';
 import WatchOnlineTvShows from '../components/WatchOnlineTvShows';
-import CategoryList from '../components/Category';
-import InTheaters from '../components/InTheaters';
+import Category from '../components/Category';
+import WatchInTheaters from '../components/WatchInTheaters';
+import LetterButtons from '../components/LetterButtons';
 
 
 const MainPage = () =>  {
@@ -15,12 +16,13 @@ const MainPage = () =>  {
         backgroundColor: 'rgb(5, 30, 52)' }}>
       <Grid container spacing={0}>
         <Grid item xs={2}>
-              <CategoryList/>
+              <Category/>
+              <LetterButtons/>
         </Grid>
         <Grid item xs={10}>
             <Box sx={{ 
               width: '100%'}}>
-              <InTheaters/>
+              <WatchInTheaters/>
               <WatchOnlineMovies/>
               <WatchOnlineTvShows/> 
           </Box>

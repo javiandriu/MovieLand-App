@@ -1,10 +1,9 @@
 import {useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom';
 import { searchMovieDetail } from '../helpers/api';
 
-const MovieDetails = () => {
+const MovieDetails = ({id}) => {
     const [detailsMovie, setDetailsMovie] = useState({})
-    const {id} = useParams()
+    
 
     useEffect(() => {
         const movies= searchMovieDetail(id)

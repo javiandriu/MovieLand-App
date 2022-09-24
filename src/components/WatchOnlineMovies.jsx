@@ -10,11 +10,8 @@ const WatchOnlineMovies = () => {
     useEffect(() => {
       const promise = WatchOnlineMovie()
       promise.then(results => {
-        console.log(results)
          setMovies(results)
-         
       })
-  
     },[])
   
 

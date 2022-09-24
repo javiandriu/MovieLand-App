@@ -1,10 +1,13 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { useParams } from 'react-router-dom';
 import Buttons from '../components/Buttons'
 import Category from '../components/Category';
-import OnlineTvShows from '../components/OnlineTvShows'
+import MovieCategory from '../components/MovieCategory';
 
-const TvShowsPage = () => {
+
+const MovieCategoryPage = () => {
+    const {category} = useParams()
   return (
     <Box 
       sx={{ 
@@ -17,14 +20,13 @@ const TvShowsPage = () => {
         <Grid item xs={10}>
             <Box sx={{ 
               width: '100%'}}>
-              <OnlineTvShows/>
+              <MovieCategory category={category}/>
               <Buttons/>
           </Box>
         </Grid>
       </Grid>
     </Box>
-    
   )
 }
 
-export default TvShowsPage
+export default MovieCategoryPage
